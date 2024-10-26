@@ -13,3 +13,5 @@ The config includes:
     3. lua
 4. Undo tree viewer
 5. package manger (packer)
+
+![alt text](resources/nvim-screenshot.png)
