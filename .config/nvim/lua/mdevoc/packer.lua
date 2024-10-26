@@ -1,9 +1,3 @@
-local lsp = require('lsp-zero')
-
-lsp.preset('recommended')
-lsp.setup()
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -18,12 +12,28 @@ return require('packer').startup(function(use)
   }
 
   use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
+      'folke/tokyonight.nvim',
+      as = 'tokyonight',
+      config = function()
+          vim.cmd('colorscheme tokyonight')
+      end
   })
+
+  --use({
+  --    'catppuccin/nvim',
+  --    as = 'catppuccin',
+  --    config = function()
+  --        vim.cmd('colorscheme catppuccin')
+  --    end
+  --})
+
+--  use({
+--	  'rose-pine/neovim',
+--	  as = 'rose-pine',
+--	  config = function()
+--		  vim.cmd('colorscheme rose-pine')
+--	  end
+  --})
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('theprimeagen/harpoon')
@@ -37,8 +47,10 @@ return require('packer').startup(function(use)
   use {
 	  "williamboman/mason.nvim",
 	  "williamboman/mason-lspconfig.nvim",
-	  "neovim/nvim-lspconfig",
   }
 
+  -- file explorer
+  use({'nvim-tree/nvim-tree.lua'})
+  use({'nvim-tree/nvim-web-devicons'})
 end)
 
