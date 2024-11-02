@@ -27,10 +27,18 @@ require'lspconfig'.tflint.setup{
 	capabilities = capabilities
 }
 
-require'cmp'.setup {
+local cmp = require'cmp'
+cmp.setup {
   sources = {
     { name = 'nvim_lsp' }
-  }
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+    ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  })
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
