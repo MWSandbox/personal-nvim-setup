@@ -5,6 +5,9 @@ telescope.setup {
     find_files = {
       hidden = true
     }
+  },
+  defaults = {
+    file_ignore_patterns = {".git"}
   }
 }
 
