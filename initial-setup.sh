@@ -13,7 +13,8 @@ rm -rf ~/.config/nvim
 cp -rf .config/nvim ~/.config/nvim
 
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
-mv JetBrainsMono.tar.xz /usr/local/share/fonts/
-tar -xf /usr/local/share/fonts/JetBrainsMono.tar.xz
-rm /usr/local/share/fonts/JetBrainsMono.tar.xz
+sudo mv JetBrainsMono.tar.xz /usr/local/share/fonts/
+cd /usr/local/share/fonts/
+sudo tar -xf JetBrainsMono.tar.xz
+sudo rm /usr/local/share/fonts/JetBrainsMono.tar.xz
 fc-cache -fv
