@@ -19,22 +19,6 @@ return require('packer').startup(function(use)
       end
   })
 
-  --use({
-  --    'catppuccin/nvim',
-  --    as = 'catppuccin',
-  --    config = function()
-  --        vim.cmd('colorscheme catppuccin')
-  --    end
-  --})
-
---  use({
---	  'rose-pine/neovim',
---	  as = 'rose-pine',
---	  config = function()
---		  vim.cmd('colorscheme rose-pine')
---	  end
-  --})
-
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
@@ -52,5 +36,15 @@ return require('packer').startup(function(use)
   -- file explorer
   use({'nvim-tree/nvim-tree.lua'})
   use({'nvim-tree/nvim-web-devicons'})
+
+  -- Markdown rendering
+  use({
+    'MeanderingProgrammer/render-markdown.nvim',
+    after = { 'nvim-treesitter' },
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+    config = function()
+      require('render-markdown').setup({})
+    end,
+  })
 end)
 
