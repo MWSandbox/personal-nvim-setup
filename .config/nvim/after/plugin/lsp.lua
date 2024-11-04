@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-	ensure_installed = { "tflint", "terraformls", "pylsp", "lua_ls", "marksman" },
+	ensure_installed = { "tflint", "terraformls", "pylsp", "lua_ls", "marksman", "yamlls" },
 }
 
 require'lspconfig'.pylsp.setup{
@@ -17,6 +17,9 @@ require'lspconfig'.pylsp.setup{
 	}
 }
 
+require'lspconfig'.yamlls.setup{
+  capabilities = capabilities
+}
 
 require'lspconfig'.terraformls.setup{
 	capabilities = capabilities
