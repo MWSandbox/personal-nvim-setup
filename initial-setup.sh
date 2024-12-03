@@ -55,3 +55,6 @@ fc-cache -fv
 # Installing Packer package manager
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# Enabling clipboard
+sudo apt-get install xclip
